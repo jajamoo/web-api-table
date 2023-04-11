@@ -20,7 +20,6 @@ function App() {
         fetch(`http://localhost:3000/qc-metrics`)
             .then((response) => response.json())
             .then((actualData) => {
-                console.log(actualData);
                 setData(actualData);
                 setOriginal(actualData);
             })
@@ -31,8 +30,6 @@ function App() {
 
     const handleHeaderClick = (event) => {
         const id = event.target.id;
-        console.log(id);
-        console.log(data);
         const data2 = [...data];
         if(idToggle) {
             data2.reverse((a, b) => {
@@ -54,14 +51,12 @@ function App() {
 
         approvedIds.forEach( approvedId => {
             const filteredArray = original.filter((lab) => {
-                console.log(lab);
                 return lab.id == approvedId
             });
             if(filteredArray.length) {
                 approvedLabs.push(filteredArray[0]);
             }
         });
-        console.log(approvedLabs);
         setShowApproved(!showApproved);
         setData(approvedLabs);
     };
