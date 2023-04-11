@@ -122,8 +122,8 @@ function App() {
                     onChange={handleChange}
                     value={search} />
 
-                <Button id="approve-button" onClick={handleApprove} variant="primary"> Approve Samples </Button>
-                <Button id="approve-button" onClick={handleReset} variant="primary"> Reset </Button>
+                <Button id="approve-button" onClick={handleApprove} variant="primary me-1"> Approve Samples </Button>
+                <Button id="approve-button" onClick={handleReset} variant="primary me-1"> Reset </Button>
             </div>
 
             <Table striped bordered hover variant="dark">
