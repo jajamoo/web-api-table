@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Simple Table SPA with a fake RESTful API backend (JSON)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
