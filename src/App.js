@@ -16,6 +16,11 @@ function App() {
     const [showApproved, setShowApproved] = useState(false);
     const [approvedIds, setApprovedIds] = useState([]);
 
+    /**
+     * Fetch to the 'backend' API. Chained promises
+     * retrieve data and the catch drops errors into the console
+     * for effective debugging.
+     */
     const fetchData = () => {
         fetch(`http://localhost:3000/qc-metrics`)
             .then((response) => response.json())
@@ -28,6 +33,11 @@ function App() {
             });
     };
 
+    /**
+     * Reverses the column based on the toggle and then flips the toggle
+     * otherwise does a sort using the same logic.
+     * @param event
+     */
     const handleHeaderClick = (event) => {
         const id = event.target.id;
         const data2 = [...data];
@@ -46,6 +56,13 @@ function App() {
         setData(data2);
     };
 
+    /*
+
+    When this fires off, loop via filter() through the approved (checked) rows
+    and see if they match the original set of IDs, put in array and push that onto an array
+    if it has a length. Then flip show approved to opposite and set your data to only show the approved Ids
+
+     */
     const handleApprove = (event) =>{
         let approvedLabs = [];
 
@@ -61,8 +78,14 @@ function App() {
         setData(approvedLabs);
     };
 
+    /**
+     *
+     * If the box is checked, put that box's row's ID into approvedIds via spread operator
+     * using setApprovedIds. Otherwise, filter out IDs that don't match and set approvedIds to that
+     * (essentially, remove from approvedIds if unchecked)
+     * @param event
+     */
     const handleCheckbox = (event) =>{
-        console.log(event.target.checked);
         const checked = event.target.checked;
         const checkboxId = event.target.id;
 
@@ -87,10 +110,17 @@ function App() {
     };
 
 
+    /**
+     * This useEffect fetches data on every page load (empty deps [])
+     */
     useEffect(() => {
         fetchData();
     }, []);
 
+    /**
+     * This useEffect does a search on the accession_id, run_id. or type column values
+     * every time the search changes (search passed into the deps array of the useEffect
+     */
     useEffect( () => {
         if(search.length) {
             const filterResults = data.filter((lab) => {
