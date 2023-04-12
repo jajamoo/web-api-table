@@ -33,6 +33,10 @@ input[type="text"]
   margin-right: 5px;
 }
 
+.search-stuff {
+  background-color: dimgray;
+}
+
 
 @keyframes App-logo-spin {
   from {
