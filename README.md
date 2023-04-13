@@ -47,8 +47,10 @@ new and different but I picked it up fast. Additionally, the spread operator (`.
 much in PHP so getting my head around that was a little different, but very manageable. I also don't have much\
 of an eye for design (UX) necessarily so making the Table look nice was a challenge (albeit a welcome one).\
 Keeping track of all the checkboxes was a challenge when it came to keeping track of the state of the checkbox elements.\
-I also struggled with the final piece (which was unfinished, sadly), which was the Reset (without a page reload) functionality
+I also struggled with the final piece (which was unfinished, sadly), which was the Reset (without a page reload) functionality:\
+I was able to reset the state of some of the variables but didn't get to the implementation of resetting the checkmarks on the DOM.
 
 
 ### If I Had More Time...
-Lots of great data here - I would consider taking some of this data and visualizing it - bar graphs or something for the numerical values....
+Lots of great data here - I would consider taking some of this data and visualizing it - bar graphs or something for the numerical values.\
+Additionally, I would implement controlled inputs, which would solve the issue of being able to reset all the checkboxes on the DOM
