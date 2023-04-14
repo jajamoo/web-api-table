@@ -143,7 +143,7 @@ function App() {
             <div class="search-stuff">
                 <input
                     type="text"
-                    placeholder="Search here"
+                    placeholder="Search `accession_id`, `run_id`, and `type` here"
                     onChange={handleChange}
                     value={search} />
 

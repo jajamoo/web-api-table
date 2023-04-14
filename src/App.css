@@ -31,6 +31,7 @@
 input[type="text"]
 {
   margin-right: 5px;
+  width: 400px;
 }
 
 .search-stuff {
